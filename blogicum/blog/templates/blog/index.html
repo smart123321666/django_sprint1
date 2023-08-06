@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  {% include 'base.html' %}
+
+    {% block content %}
+    <main>
+      <div class="container py-5">
+        <h1>Лента записей</h1>
+        <hr>
+        <article>
+          {% for blog in post_list reversed %}
+          <ul>
+            <li>
+              {{ blog.location }}
+            </li>
+            <li>
+              {{ blog.date }}
+            </li>
+            <li>
+              Категория:
+              <a href="{% url 'blog:category_posts' category_slug=category_slug.category %}">{{ blog.category }}</a>
+            </li>
+          </ul>
+          <!-- Первые 10 слов -->
+          <p>
+            {{blog.text|truncatewords:10}}
+          </p>
+          <a href="{% url 'blog:post_detail' blog.id %}">Читать полный текст</a>
+        </article>
+        {% endfor %}
+      </div>
+    </main>
+    <footer class="border-top text-center py-3">
+      <p>© Блогикум</p>
+    </footer>
+  </body>
+  {% endblock %}
+</html>

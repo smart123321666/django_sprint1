@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  {% include 'base.html' %}
+  {% block content %}
+    <main>
+      <div class="container py-5">
+        <h1>Публикации в категории -  {{ category_slug }} </h1>
+      </div>
+    </main>
+    <footer class="border-top text-center py-3">
+      <p>© Блогикум</p>
+    </footer>
+  </body>
+  {% endblock %}
+</html>
