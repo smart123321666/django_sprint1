@@ -9,24 +9,24 @@
         <h1>Лента записей</h1>
         <hr>
         <article>
-          {% for blog in post_list reversed %}
+          {% for post in post_list reversed %}
           <ul>
             <li>
-              {{ blog.location }}
+              {{ post.location }}
             </li>
             <li>
-              {{ blog.date }}
+              {{ post.date }}
             </li>
             <li>
               Категория:
-              <a href="{% url 'blog:category_posts' category_slug=category_slug.category %}">{{ blog.category }}</a>
+              <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
             </li>
           </ul>
           <!-- Первые 10 слов -->
           <p>
-            {{blog.text|truncatewords:10}}
+            {{post.text|truncatewords:10}}
           </p>
-          <a href="{% url 'blog:post_detail' blog.id %}">Читать полный текст</a>
+          <a href="{% url 'blog:post_detail' post.id %}">Читать полный текст</a>
         </article>
         {% endfor %}
       </div>

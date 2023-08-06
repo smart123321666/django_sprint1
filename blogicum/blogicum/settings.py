@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-82ar*g1agpisf!$9ga!_q1=n(txpd2zyea8aa4opl37@*+2+08
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATES_DIR = BASE_DIR / 'templates'
+TEMPLATES_DIR = [BASE_DIR / 'templates',
+                 'D:/dev/django_sprint1/blogicum/pages/templates/pages']
 
 ALLOWED_HOSTS = []
 
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'blogicum.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['D:/dev/django_sprint1/blogicum/pages/templates/pages'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

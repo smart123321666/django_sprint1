@@ -9,20 +9,20 @@
 
           <ul>
             <li>
-              {{ blog.location }}
+              {{ post.location }}
             </li>
             <li>
-              {{ blog.date }}
+              {{ post.date }}
             </li>
             <li>
-              Категория: <a href="{{ blog.category }}">{{blog.category}}</a>
+              Категория: <a href="{{ post.category }}">{{post.category}}</a>
             </li>
           </ul>
           <!-- Первые 10 слов -->
           <p>
-            {{blog.text|linebreaksbr}}
+            {{post.text|linebreaksbr}}
           </p>
-          <a href="{% url 'blog:post_detail' blog.id %}"></a>
+          <a href="{% url 'blog:post_detail' post.id %}"></a>
         </article>
       </div>
     </main>

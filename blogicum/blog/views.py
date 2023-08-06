@@ -4,7 +4,7 @@ from django.shortcuts import render
 posts = [
     {
         'id': 0,
-        'location': 'Остров отчаяния',
+        'location': 'Остров отчаянья',
         'date': '30 сентября 1659 года',
         'category': 'travel',
         'text': '''Наш корабль, застигнутый в открытом море
@@ -16,7 +16,7 @@ posts = [
     },
     {
         'id': 1,
-        'location': 'Остров отчаяния',
+        'location': 'Остров отчаянья',
         'date': '1 октября 1659 года',
         'category': 'not-my-day',
         'text': '''Проснувшись поутру, я увидел, что наш корабль сняло
@@ -32,7 +32,7 @@ posts = [
     },
     {
         'id': 2,
-        'location': 'Остров отчаяния',
+        'location': 'Остров отчаянья',
         'date': '25 октября 1659 года',
         'category': 'not-my-day',
         'text': '''Всю ночь и весь день шёл дождь и дул сильный
@@ -52,7 +52,7 @@ def index(request):
 def post_detail(request, id):
     template = 'blog/detail.html'
     context = {
-        'blog': posts[id]
+        'post': posts[id]
     }
     return render(request, template, context)
 
