@@ -1,7 +1,7 @@
 {% load static %}
+{% block title %}
 <!DOCTYPE html>
 <html lang="ru">
-  {% block title %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,39 +41,5 @@
       </nav>
     </header>
     {% endblock %}
-    {% block content %}
-    <main>
-      <div class="container py-5">
-        <h1>Лента записей</h1>
-        <hr>
-        <article>
-          {% block main %}
-          {% for blog in post_list %}
-          <ul>
-            <li>
-              {{ blog.location }}
-            </li>
-            <li>
-              {{ blog.date }}
-            </li>
-            <li>
-              Категория:
-              <a href="{% url 'blog:category_posts' blog.category %}"> {{blog.category}}</a>
-            </li>
-          </ul>
-          <!-- Первые 10 слов -->
-          <p>
-            {{blog.text|truncatewords:10}}
-          </p>
-          <a href="{% url 'blog:post_detail' blog.id %}">Читать полный текст</a>
-        </article>
-        {% endfor %}
-      </div>
-    </main>
-    {% endblock %}
-    <footer class="border-top text-center py-3">
-      <p>© Блогикум</p>
-    </footer>
-  </body>
-  {% endblock %}
+    {% block content %}{% endblock %}
 </html>
