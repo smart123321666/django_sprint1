@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
     {% include 'base.html' %}
     {% block content %}
     <main>
@@ -13,10 +12,10 @@
               {{ post.date }}
             </li>
             <li>
-              Категория: <a href="{{ post.category }}">{{post.category}}</a>
+              Категория:
+              <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
             </li>
           </ul>
-          <!-- Первые 10 слов -->
           <p>
             {{post.text|linebreaksbr}}
           </p>

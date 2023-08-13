@@ -44,7 +44,8 @@ ROOT_URLCONF = 'blogicum.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates/'],
+        'DIRS': ['templates/',
+                 'templates/blog'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

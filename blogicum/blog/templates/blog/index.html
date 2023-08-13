@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
 <html lang="ru">
   {% include 'base.html' %}
     {% block content %}
@@ -22,7 +21,6 @@
               <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
             </li>
           </ul>
-          <!-- Первые 10 слов -->
           <p>
             {{post.text|truncatewords:10}}
           </p>
