@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .source import posts
 from django.http import Http404
+from .source import posts
 
 
 def index(request):
